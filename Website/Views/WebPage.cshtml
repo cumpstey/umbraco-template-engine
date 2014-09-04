@@ -1,0 +1,39 @@
+﻿@model Zone.UmbracoTemplateEngine.Website.ContentTypes.Content.WebPage
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+ <!--<![endif]-->
+<head>
+    @Html.Partial("_MetaTags")
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <style>
+        .contentMacro {
+            border:dashed 2px #ccc;
+            padding:10px;
+        }
+        .macroError {
+            border-color:#f00;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper-outer">
+        <a href="#content" class="skip-link">@Html.Text("WebPage: Skip to content")</a>
+
+        @* start main header *@
+        <div role="banner">
+            @Html.Partial("_Logo")
+            @Html.Partial("_SiteSearch")
+            @Html.Action("MainNavigation", "Navigation", new { Levels = 2 })
+            @Html.Partial("_Breadcrumb")
+        </div>
+        @* end main header *@
+
+        @RenderBody()
+    </div>
+</body>
+</html>
