@@ -3,7 +3,6 @@
     using System.Web;
     using System.Web.Mvc;
     using System.Xml.Linq;
-    using Zone.Library.FrontEnd.Markup;
     using Zone.UmbracoTemplateEngine.Website.ContentTypes.Media;
 
     public static class MediaExtensions

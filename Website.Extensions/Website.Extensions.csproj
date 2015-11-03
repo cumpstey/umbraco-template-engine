@@ -292,9 +292,6 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.3\lib\net45\WebMatrix.WebData.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Zone.Library.FrontEnd.Markup">
-      <HintPath>..\packages\Zone.Library.FrontEnd.Markup.1.0.7\lib\net45\Zone.Library.FrontEnd.Markup.dll</HintPath>
-    </Reference>
     <Reference Include="Zone.UmbracoMapper, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoMapper.1.6.0\lib\Zone.UmbracoMapper.dll</HintPath>
       <Private>True</Private>
