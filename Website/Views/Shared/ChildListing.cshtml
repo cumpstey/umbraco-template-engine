@@ -1,0 +1,10 @@
+﻿@model IChildListingItem
+
+<div>
+    <h3>@Model.ListingTitle</h3>
+    <p>@Model.ListingText</p>
+    @if (Model.MainImage != null)
+    {
+        <div>@Html.DisplayImage(Model.MainImage, 280, 157)</div>
+    }
+</div>

@@ -1,8 +1,6 @@
 ﻿namespace Zone.UmbracoTemplateEngine.Website.Controllers.WebPages
 {
     using System.Web.Mvc;
-    using Markup;
-    using Umbraco.Core.Models;
     using Zone.UmbracoTemplateEngine.Website.ContentTypes.Content;
     using Zone.UmbracoTemplateEngine.Website.Controllers.Base;
     using Zone.UmbracoTemplateEngine.Website.Services;
@@ -35,7 +33,7 @@
         public PartialViewResult ChildListing(int? characterLimit)
         {
             var model = GetModel();
-            return PartialView("BlockTemplates/ChildListing", model);
+            return PartialView("ChildListing", model);
         }
 
         [ChildActionOnly]

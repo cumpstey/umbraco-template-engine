@@ -1,10 +1,10 @@
-﻿@model Zone.UmbracoTemplateEngine.Website.ContentTypes.Content.VideoResource
+﻿@model VideoResource
 @{
     Layout = "WebPage.cshtml";
 }
 
 <div>
-    @Html.Partial("_HeroVideo")
-    @Html.Partial("_MainTitle")
-    @Html.Partial("_Standfirst")
+    @Html.Partial("MainTitle")
+    @Html.Partial("Standfirst")
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/@Model.YouTubeVideoId" frameborder="0" allowfullscreen></iframe>
 </div>

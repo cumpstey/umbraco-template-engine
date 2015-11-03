@@ -1,0 +1,32 @@
+﻿@model INavigation
+
+<div class="global-nav">
+    <nav class="navigation-main" role="navigation">
+        <ul role="list" id="main-menu" class="nav-menu">
+            @Menu(Model.Items)
+        </ul>
+    </nav>
+</div>
+
+@helper Menu(IEnumerable<INavigationItem> items)
+{
+    foreach (var item in items)
+    {
+        <li @Html.Attribute("class", item.Items != null && item.Items.Any() ? "nav-item has-sub-menu" : "nav-item")>
+            <a href="@item.Url"
+               @Html.Attribute("class", item.IsCurrentPageOrAncestor ? "active" : null)>
+                <span class="table">
+                    <span class="cell">
+                        @item.HeaderText
+                    </span>
+                </span>
+            </a>
+            @if (item.Items != null && item.Items.Any())
+            {
+                <ul role="menu">
+                    @Menu(item.Items)
+                </ul>
+            }
+        </li>
+    }
+}

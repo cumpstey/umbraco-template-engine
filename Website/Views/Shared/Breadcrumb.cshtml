@@ -1,0 +1,36 @@
+﻿@model INavigation
+
+@if (Model.Items != null && Model.Items.Any())
+{
+    <nav class="navigation-breadcrumb" role="navigation">
+        <ul role="menubar" class="is-parent">
+            @Menu(Model.Items)
+        </ul>
+    </nav>
+}
+
+@helper Menu(IEnumerable<INavigationItem> items)
+{
+    foreach (var item in items)
+    {
+        <li>
+            <a href="@item.Url" role="menuitem" @Html.Attribute("class", item.IsCurrentPage ? "active" : null)>
+                <span class="table">
+                    <span class="cell">
+                        @item.NavigationText
+                    </span>
+                </span>
+                @if (item.Items != null && item.Items.Any())
+                {
+                    <span class="divider"> / </span>
+                }
+            </a>
+            @if (item.Items != null && item.Items.Any())
+            {
+                <ul @Html.Attribute("class", item.Items.Any(x => x.Items != null) ? "is-parent" : null)>
+                    @Menu(item.Items)
+                </ul>
+            }
+        </li>
+    }
+}

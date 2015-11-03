@@ -17,6 +17,17 @@
 
         #endregion
 
+        #region Attributes
+
+        public static IHtmlString Attribute(this HtmlHelper helper, string name, string content)
+        {
+            return string.IsNullOrEmpty(content)
+                       ? new HtmlString(string.Empty)
+                       : new HtmlString(string.Format(@"class=""{0}""", HttpUtility.HtmlAttributeEncode(content)));
+        }
+
+        #endregion
+
         #region Date and time
 
         public static IHtmlString Date(this HtmlHelper helper, DateTime date, CultureInfo culture = null)

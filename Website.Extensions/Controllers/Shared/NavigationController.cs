@@ -32,7 +32,7 @@
                                 Items = GetMenuItems(website, 0, levels - 1),
                             };
 
-            return PartialView("_Navigation", model);
+            return PartialView(model);
         }
 
         #endregion
@@ -42,7 +42,7 @@
         private IEnumerable<NavigationItemModel> GetMenuItems(IPublishedContent parent, int currentLevel, int maxLevel)
         {
             var menu = parent.Children
-                             .Where(i => !i.GetPropertyValue<bool>("umbracoNaviHide") && i.TemplateId != 0 && Umbraco.MemberHasAccess(i.Id, i.Path))
+                             .Where(i => !i.GetPropertyValue<bool>("umbracoNaviHide") && i.TemplateId != 0 && Umbraco.MemberHasAccess(i.Path))
                              .Select(i =>
                                          {
                                              var item = new NavigationItemModel

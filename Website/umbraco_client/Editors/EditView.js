@@ -8,21 +8,6 @@
         //private methods/variables
         _opts: null,
 
-        _updateNewFileProperties: function(filePath) {
-            /// <summary>Updates the current treeSyncPath and original file name to have the new file name</summary>
-            
-            //update the originalFileName prop
-            this._opts.originalFileName = filePath;
-
-            //re-create the new path
-            var subPath = this._opts.treeSyncPath.split(",");
-            //remove the last element
-            subPath.pop();
-            //add the new element
-            subPath.push(filePath.split("/")[1]);
-            this._opts.treeSyncPath = subPath.join();
-        },
-
         // Constructor
         constructor: function (opts) {
             // Merge options with default
@@ -69,6 +54,33 @@
             });
         },
 
+
+        openQueryModal: function () {
+            /// <summary>callback used to display the modal dialog to insert a macro with parameters</summary>
+
+            var self = this;
+
+            UmbClientMgr.openAngularModalWindow({
+                template: "views/common/dialogs/template/queryBuilder.html",
+                callback: function (data) {
+
+                    //var dataFormatted = data.replace(new RegExp('[' + "." + ']', 'g'), "\n\t\t\t\t\t.");
+
+                    var code = "\n@{\n" + "\tvar selection = " + data + ";\n}\n";
+                    code += "<ul>\n" +
+                                "\t@foreach(var item in selection){\n" +
+                                    "\t\t<li>\n" +
+                                        "\t\t\t<a href=\"@item.Url\">@item.Name</a>\n" +
+                                    "\t\t</li>\n" +
+                                "\t}\n" +
+                            "</ul>\n\n";
+
+                    UmbEditor.Insert(code, '', self._opts.codeEditorElementId);
+                }
+            });
+        },
+
+
         doSubmit: function () {
             /// <summary>Submits the data to the server for saving</summary>
             var codeVal = UmbClientMgr.contentFrame().UmbEditor.GetCode();
@@ -95,8 +107,9 @@
             }
             else {
                 //saving a partial view    
+                var actionName = this._opts.editorType === "PartialViewMacro" ? "SavePartialViewMacro" : "SavePartialView";
 
-                $.post(self._opts.restServiceLocation + "SavePartialView",
+                $.post(self._opts.restServiceLocation + actionName,
                     JSON.stringify({
                         filename: this._opts.nameTxtBox.val(),
                         oldName: this._opts.originalFileName,
@@ -123,6 +136,9 @@
                     pathChanged = true;
                 }
                 path = args.path;
+            }
+            if (args.contents) {
+                UmbEditor.SetCode(args.contents);
             }
 
             UmbClientMgr.mainTree().setActiveTreeType(this._opts.currentTreeType);
@@ -173,8 +189,12 @@
                     
                     top.UmbSpeechBubble.ShowMessage('save', header, msg);
 
-                    //then we need to update our current tree sync path to represent the new one
-                    this._updateNewFileProperties(newFilePath);
+                    if (args && args.name) {
+                        this._opts.originalFileName = args.name;
+                    }
+                    if (args && args.path) {
+                        this._opts.treeSyncPath = args.path;
+                    }
 
                     UmbClientMgr.mainTree().syncTree(path, true, null, newFilePath.split("/")[1]);
                 }                

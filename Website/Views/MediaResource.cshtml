@@ -1,4 +1,10 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@model MediaResource
 @{
     Layout = "WebPage.cshtml";
 }
+
+<div>
+    @Html.Partial("MainTitle")
+    @Html.Partial("Standfirst")
+    @Html.DisplayImage(Model.MainImage)
+</div>

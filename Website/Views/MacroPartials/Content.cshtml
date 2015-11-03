@@ -1,0 +1,22 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    int id;
+    var validId = int.TryParse(Model.MacroParameters["ContentId"].ToString(), out id);
+    var preview = ViewContext.HttpContext.Request.IsBackOfficeMacroRendering();
+}
+
+@if (validId)
+{
+    if (preview)
+    {
+        @Html.Template(id, new[] { "ContentMacro", "Preview" }, "~/Views/MacroPartials/ContentError.cshtml")
+    }
+    else
+    {
+        @Html.Template(id, "ContentMacro")
+    }
+}
+else if (HttpContext.Current.IsDebuggingEnabled)
+{
+    @Html.Template(id, "ContentMacro", "~/Views/MacroPartials/ContentError.cshtml")
+}

@@ -4,8 +4,6 @@
 
     public interface IArticleDetails
     {
-        string Author { get; }
-
         DateTime? PublicationDate { get; }
     }
 }

@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website.Extensions", "Website.Extensions\Website.Extensions.csproj", "{854AB713-803F-4541-AE3A-E7BAFD7648E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoTemplateEngine", "UmbracoTemplateEngine\UmbracoTemplateEngine.csproj", "{4A6725D8-2649-49B3-801C-09B3158F2CBD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "Website\Website.csproj", "{683B5D0F-66DD-4218-BCAC-45AF81F1F57C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Website", "_Website\_Website.csproj", "{E3474BBB-C226-45CF-9ED9-E1459558E058}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,10 +27,6 @@ Global
 		{683B5D0F-66DD-4218-BCAC-45AF81F1F57C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{683B5D0F-66DD-4218-BCAC-45AF81F1F57C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{683B5D0F-66DD-4218-BCAC-45AF81F1F57C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E3474BBB-C226-45CF-9ED9-E1459558E058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E3474BBB-C226-45CF-9ED9-E1459558E058}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E3474BBB-C226-45CF-9ED9-E1459558E058}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E3474BBB-C226-45CF-9ED9-E1459558E058}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

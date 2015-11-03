@@ -1,0 +1,13 @@
+﻿@model Article
+
+<div style="border: solid 1px #ccc; padding: 5px;">
+    @if (Model.MainImage != null)
+    {
+        <div><a href="@Model.Url">@Html.DisplayImage(Model.MainImage, 280, 157)</a></div>
+    }
+    <p><strong><a href="@Model.Url">@Model.HeaderText</a></strong></p>
+    @if (Model.PublicationDate.HasValue)
+    {
+        <p>Published @Model.PublicationDate.Value.ToString("dd MMM yyyy")</p>
+    }
+</div>

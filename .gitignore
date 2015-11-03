@@ -1,35 +1,31 @@
-[Dd]ebug/
-[Rr]elease/
+# Files from build, cache, temp etc
 build/
 [Bb]in/
 [Oo]bj/
+[Cc]ached/
+TestResults/
+packages/
 *.suo
 *.sln.cache 
 *.user
-TestResults/
 *.tmp
 *.orig
-*[Rr]e[Ss]harper.user
-_ReSharper.*/
-*StyleCop.Cache
+
+# OS files
 .DS_Store
 Thumbs.db
 __MACOSX/
-/bin
-/Bin
-.bin/
-.Bin/
-App_Browsers/
+
+# Tools
+*[Rr]e[Ss]harper.user
+_ReSharper.*/
+*StyleCop.Cache
+
+# Umbraco
 */App_Data/preview/
 */App_Data/TEMP/
 */App_Data/Logs/
+*/App_Data/NuGetBackup/
 */App_Data/umbraco.config
-[Cc]ached/
-ClientDependency/
-ExamineIndexes/
 */media/created-packages/
-TestWebApp/App_Data/Logs/UmbracoTraceLog.txt
-_Website/
-
-
 

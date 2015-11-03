@@ -4,7 +4,7 @@
     using Zone.UmbracoTemplateEngine.Website.ViewModels;
 
     public class VideoResource : WebPage,
-                                 IHeroVideo, IMainTitle, IStandfirst,
+                                 IMainTitle, IStandfirst,
                                  IChildListingItem
     {
         #region Fields
@@ -21,10 +21,10 @@
 
         public string HeaderText { get; set; }
 
-        public string VideoUrl { get; set; }
-
         public string Standfirst { get; set; }
-        
+
+        public string YouTubeVideoId { get; set; }
+
         public string ListingTitle
         {
             get { return _listingTitle ?? HeaderText; }

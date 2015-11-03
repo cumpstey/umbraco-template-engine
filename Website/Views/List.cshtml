@@ -1,9 +1,14 @@
-﻿@model Zone.UmbracoTemplateEngine.Website.ContentTypes.Content.List
+﻿@model List
 @{
     Layout = "WebPage.cshtml";
 }
 
 <div>
-    @Html.Partial("_MainTitle")
-    @Html.Partial("_ChildListing")
+    @Html.Partial("MainTitle")
+    <ul>
+        @foreach (var item in Model.ChildListing)
+        {
+            <li>@Html.Template(item, "ChildListing")</li>
+        }
+    </ul>
 </div>

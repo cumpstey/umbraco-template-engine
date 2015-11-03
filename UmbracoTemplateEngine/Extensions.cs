@@ -1,13 +1,14 @@
 ﻿namespace Zone.UmbracoTemplateEngine
 {
     using System;
+    using System.Web;
     using Umbraco.Core.Models;
     using Umbraco.Web;
     using Umbraco.Web.Mvc;
 
     public static class Extensions
     {
-        #region Methods
+        #region SurfaceController
 
         public static IPublishedContent GetCurrentData(this SurfaceController controller)
         {
@@ -24,6 +25,15 @@
             }
 
             return null;
+        }
+
+        #endregion
+
+        #region HttpRequestBase
+
+        public static bool IsBackOfficeMacroRendering(this HttpRequestBase request)
+        {
+            return request != null && request.Url != null && request.Url.AbsolutePath == "/umbraco/backoffice/UmbracoApi/Macro/GetMacroResultAsHtmlForEditor";
         }
 
         #endregion

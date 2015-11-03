@@ -1,4 +1,14 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@model ResourceList
 @{
     Layout = "WebPage.cshtml";
 }
+
+<div>
+    @Html.Partial("MainTitle")
+    <ul>
+        @foreach (var item in Model.ChildListing)
+        {
+            <li>@Html.Template(item, "ChildListing")</li>
+        }
+    </ul>
+</div>

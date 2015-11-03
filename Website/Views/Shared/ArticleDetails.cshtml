@@ -1,0 +1,6 @@
+﻿@model IArticleDetails
+
+@if (Model.PublicationDate.HasValue)
+{
+    <div>Published @Model.PublicationDate.Value.ToString("dd MMM yyyy")</div>
+}
