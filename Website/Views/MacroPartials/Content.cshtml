@@ -5,18 +5,15 @@
     var preview = ViewContext.HttpContext.Request.IsBackOfficeMacroRendering();
 }
 
-@if (validId)
+@if (validId && preview)
 {
-    if (preview)
-    {
-        @Html.Template(id, new[] { "ContentMacro", "Preview" }, "~/Views/MacroPartials/ContentError.cshtml")
-    }
-    else
-    {
-        @Html.Template(id, "ContentMacro")
-    }
+    @Html.Template(id, new[] { "ContentMacro", "Preview" }, "~/Views/Shared/ContentMacro_NoTemplate.cshtml", "~/Views/Shared/ContentMacro_InvalidContent.cshtml")
 }
 else if (HttpContext.Current.IsDebuggingEnabled)
 {
-    @Html.Template(id, "ContentMacro", "~/Views/MacroPartials/ContentError.cshtml")
+    @Html.Template(id, "ContentMacro", "~/Views/Shared/ContentMacro_NoTemplate.cshtml", "~/Views/Shared/ContentMacro_InvalidContent.cshtml")
+}
+else if (validId)
+{
+    @Html.Template(id, "ContentMacro")
 }

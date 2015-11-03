@@ -4,7 +4,8 @@ build/
 [Oo]bj/
 [Cc]ached/
 TestResults/
-packages/
+packages/*
+!packages/repositories.config
 *.suo
 *.sln.cache 
 *.user

@@ -17,12 +17,12 @@
 
         #region Methods
 
-        public static IHtmlString Template(this HtmlHelper htmlHelper, int id, string tag, string partialToRenderIfNoTemplate = null, object routeValues = null)
+        public static IHtmlString Template(this HtmlHelper htmlHelper, int id, string tag, string partialToRenderIfNoTemplate = null, string partialToRenderIfInvalidContent = null, object routeValues = null)
         {
-            return Template(htmlHelper, id, new[] { tag }, partialToRenderIfNoTemplate, routeValues);
+            return Template(htmlHelper, id, new[] { tag }, partialToRenderIfNoTemplate, partialToRenderIfInvalidContent, routeValues);
         }
 
-        public static IHtmlString Template(this HtmlHelper htmlHelper, int id, string[] tags, string partialToRenderIfNoTemplate = null, object routeValues = null)
+        public static IHtmlString Template(this HtmlHelper htmlHelper, int id, string[] tags, string partialToRenderIfNoTemplate = null, string partialToRenderIfInvalidContent = null, object routeValues = null)
         {
             if (htmlHelper == null)
             {
@@ -33,7 +33,9 @@
             var content = umbracoHelper.TypedContent(id);
             if (content == null)
             {
-                return null;
+                return partialToRenderIfInvalidContent == null
+                           ? null
+                           : htmlHelper.Partial(partialToRenderIfInvalidContent);
             }
 
             var action = TemplateResolver.ResolveTemplate(content.DocumentTypeAlias, tags);

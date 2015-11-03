@@ -305,7 +305,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionResults\SafeRedirect.cs" />
-    <Compile Include="Config.cs" />
     <Compile Include="ContentTypes\Content\ResourceList.cs" />
     <Compile Include="ContentTypes\Content\MediaResource.cs" />
     <Compile Include="ContentTypes\Content\VideoResource.cs" />
