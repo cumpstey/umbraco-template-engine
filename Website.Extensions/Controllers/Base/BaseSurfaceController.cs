@@ -37,6 +37,7 @@
                              .AddCustomMapping(typeof(MediaFile).FullName, MediaMapper.GetMediaFile)
                              .AddCustomMapping(typeof(Image).FullName, MediaMapper.GetImage)
                              .AddCustomMapping(typeof(ImageWithCrops).FullName, MediaMapper.GetImageWithCrops)
+                             .AddCustomMapping(typeof(IEnumerable<int>).FullName, GeneralMapper.GetEnumerableOfInt)
                              .AddCustomMapping(typeof(IEnumerable<int>).FullName, ChildrenMapper.GetChildren, "ChildListing");
         }
 

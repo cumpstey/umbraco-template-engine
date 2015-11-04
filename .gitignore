@@ -30,3 +30,6 @@ _ReSharper.*/
 */App_Data/umbraco.config
 */media/created-packages/
 
+# NuGet
+*/packagecontents/*
+!*/packagecontents/*.nuspec

@@ -37,6 +37,14 @@
         }
 
         [ChildActionOnly]
+        [TemplateDescriptor(Tags = new[] { "HomepageListing" })]
+        public PartialViewResult HomepageListing()
+        {
+            var model = GetModel();
+            return PartialView("HomepageListing", model);
+        }
+
+        [ChildActionOnly]
         [TemplateDescriptor(Tags = new[] { "ContentMacro" })]
         public PartialViewResult ContentMacro()
         {

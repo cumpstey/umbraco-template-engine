@@ -3131,6 +3131,9 @@
     <Content Include="umbraco_client\CodeMirror\Js\Mode\Razor\LICENSE" />
     <Content Include="umbraco_client\CodeMirror\Js\Mode\Sieve\LICENSE" />
     <Content Include="Views\Shared\ContentMacro_NoTemplate.cshtml" />
+    <Content Include="Views\VideoResource\HomepageListing.cshtml" />
+    <Content Include="Views\Shared\HomepageListing.cshtml" />
+    <Content Include="Views\Shared\Layouts\_HomepageListing.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

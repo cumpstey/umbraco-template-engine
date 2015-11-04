@@ -1,10 +1,10 @@
 ﻿@model IChildListingItem
-
+@{ Layout = "~/Views/Shared/Layouts/_HomepageListing.cshtml"; }
 <div>
-    <h3><a href="@Model.Url">@Model.ListingTitle</a></h3>
-    <p>@Model.ListingText</p>
     @if (Model.MainImage != null)
     {
         <div><a href="@Model.Url">@Html.DisplayImage(Model.MainImage, 280, 157)</a></div>
     }
+    <h3><a href="@Model.Url">@Model.ListingTitle</a></h3>
+    <p>@Model.ListingText</p>
 </div>

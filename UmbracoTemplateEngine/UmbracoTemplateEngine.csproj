@@ -274,9 +274,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <Content Include="Package\Content\Views\MacroPartials\Content.cshtml" />
+    <Content Include="Package\Content\Views\Shared\ContentMacro_NoTemplate.cshtml" />
+    <Content Include="Package\Content\Views\Shared\ContentMacro_InvalidContent.cshtml" />
+    <Content Include="Package\Content\Views\Web.config" />
+    <None Include="Package\Content\Views\Web.config.install.xdt" />
     <None Include="packages.config" />
+    <None Include="Package\Tools\init.ps1" />
+    <None Include="Package\Tools\readme.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Q /Y "$(TargetDir)$(TargetFileName)" "$(ProjectDir)packagecontents\lib\"
+xcopy /Q /Y /S "$(ProjectDir)Package\*" "$(ProjectDir)packagecontents\"
+del "$(ProjectDir)packagecontents\Content\Views\Web.config"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

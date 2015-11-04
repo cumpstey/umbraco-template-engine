@@ -1,0 +1,11 @@
+﻿<?xml version="1.0"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <system.web.webPages.razor>
+    <pages>
+      <namespaces>
+        <add namespace="Zone.UmbracoTemplateEngine" xdt:Transform="Remove" xdt:Locator="match(namespace)" />
+        <add namespace="Zone.UmbracoTemplateEngine" xdt:Transform="Insert" />
+      </namespaces>
+    </pages>
+  </system.web.webPages.razor>
+</configuration>

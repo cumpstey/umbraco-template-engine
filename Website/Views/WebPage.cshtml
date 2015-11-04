@@ -11,25 +11,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <style>
-        .contentMacro {
-            border:dashed 2px #ccc;
-            padding:10px;
-        }
         .macroError {
-            border-color:#f00;
+            border:dashed 2px #f00;
+            padding:10px;
         }
     </style>
 </head>
 <body>
     <div class="wrapper-outer">
-        <a href="#content" class="skip-link">@Html.Text("WebPage: Skip to content")</a>
-
-        @* start main header *@
         <div role="banner">
             @Html.Action("MainNavigation", "Navigation", new { Levels = 2 })
-            @*@Html.Partial("_Breadcrumb")*@
         </div>
-        @* end main header *@
 
         @RenderBody()
     </div>

@@ -12,7 +12,10 @@
 
         public static string Text(this HtmlHelper helper, string key)
         {
-            return new UmbracoHelper(UmbracoContext.Current).GetDictionaryValue(key);
+            var dictionaryValue = new UmbracoHelper(UmbracoContext.Current).GetDictionaryValue(key);
+            return !string.IsNullOrEmpty(dictionaryValue)
+                       ? dictionaryValue
+                       : key;
         }
 
         #endregion

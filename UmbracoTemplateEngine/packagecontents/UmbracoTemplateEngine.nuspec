@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>UmbracoTemplateEngine</id>
+    <version>1.0</version>
+    <title>Umbraco Template Engine</title>
+    <authors>Neil Cumpstey</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A way of easily rendering the same content using different templates for different uses on the site</description>
+    <copyright>Copyright 2015</copyright>
+    <tags>Umbraco</tags>
+    <dependencies>
+      <dependency id="UmbracoCms" version="6.0.0" />
+    </dependencies>
+  </metadata>
+</package>

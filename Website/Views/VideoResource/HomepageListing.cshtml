@@ -1,0 +1,6 @@
+﻿@model VideoResource
+@{ Layout = "~/Views/Shared/Layouts/_HomepageListing.cshtml"; }
+<div style="text-align: center;">
+    <h3>@Model.ListingTitle</h3>
+    <iframe width="280" height="157" src="https://www.youtube.com/embed/@Model.YouTubeVideoId" frameborder="0" allowfullscreen></iframe>
+</div>

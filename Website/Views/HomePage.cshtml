@@ -5,4 +5,12 @@
 
 <div>
     @Html.Partial("MainTitle")
+    @Html.Partial("BodyText")
+    @if (Model.FeaturedContent != null && Model.FeaturedContent.Any())
+    {
+        foreach (var item in Model.FeaturedContent)
+        {
+            @Html.Template(item, "HomepageListing")
+        }
+    }
 </div>

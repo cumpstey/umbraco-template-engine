@@ -325,7 +325,9 @@
     <Compile Include="Controllers\WebPages\ListController.cs" />
     <Compile Include="Controllers\WebPages\HomePageController.cs" />
     <Compile Include="Controllers\WebPages\WebsiteController.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="Initialization\ObjectFactoryConfiguration.cs" />
+    <Compile Include="Mapping\GeneralMapper.cs" />
     <Compile Include="Mapping\ChildrenMapper.cs" />
     <Compile Include="Mapping\MediaMapper.cs" />
     <Compile Include="Markup\MediaExtensions.cs" />
