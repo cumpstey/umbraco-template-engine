@@ -18,6 +18,7 @@ Thumbs.db
 __MACOSX/
 
 # Tools
+.vs/
 *[Rr]e[Ss]harper.user
 _ReSharper.*/
 *StyleCop.Cache
