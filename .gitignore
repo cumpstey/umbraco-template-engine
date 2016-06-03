@@ -24,6 +24,7 @@ _ReSharper.*/
 *StyleCop.Cache
 
 # Umbraco
+*/App_Data/cache/
 */App_Data/preview/
 */App_Data/TEMP/
 */App_Data/Logs/
