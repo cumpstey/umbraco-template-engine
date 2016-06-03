@@ -104,7 +104,7 @@ The recommendation is to add this property to the base controller of a project, 
 
 Include the `Zone.UmbracoTemplateEngine` namespace in your views.
 
-```cs
+```
 @using Zone.UmbracoTemplateEngine
 ```
 
@@ -116,7 +116,7 @@ or, in the web.config:
 
 Then call the HtmlHelper extension method, passing in one or more tags to identify the template required; the controller is identified by the content type of the content passed to the method.
 
-```cs
+```
 @Html.Template(1234, "ChildListing")
 @Html.Template(1234, new[] { "ChildListing", "Preview" }
 ```
@@ -133,7 +133,7 @@ public PartialViewResult Template2() {...}
 [TemplateDescriptor(Tags = new[] { "Tag1", "Tag3" })]
 public PartialViewResult Template3() {...}
 ```
-```cs
+```
 @Html.Template(1234, new[] { "Tag2", "Tag3" }
 ```
 
