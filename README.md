@@ -87,13 +87,13 @@ protected IPublishedContent CurrentData
 {
     get
     {
-        if (!\_currentDataDetected)
+        if (!_currentDataDetected)
         {
-            \_currentData = this.GetCurrentData();
-            \_currentDataDetected = true;
+            _currentData = this.GetCurrentData();
+            _currentDataDetected = true;
         }
 
-        return \_currentData ?? CurrentPage;
+        return _currentData ?? CurrentPage;
     }
 }
 ```
