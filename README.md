@@ -10,7 +10,7 @@ The purposes of Umbraco Template Engine are:
 
 ### Example website
 
-The project contains an example website illustrating each usage, as:
+The project contains an example website (apologies for the lack of styling!) illustrating each usage, as:
 
 - Mixed content in a 'highlights' list on the homepage
 - Content of different types embedded in rich text areas
@@ -57,6 +57,12 @@ The project contains a macro partial which can be used in a macro with a single 
 It's possible to specify different templates for backoffice and website rendering, by tagging a template "Preview" - particularly useful with an embedded video, which you really don't want playing in a rich text editor!
 
 If debugging is enabled (`system.web/compilation/@debug`) The macro will display an error message if the referenced content no longer exists, or if it doesn't have an appropriate template defined. If debugging is disabled (as on a live website) the content will simply not be displayed.
+
+## Prerequisites
+
+In order to use the Template Engine you must use [route hijacking](https://our.umbraco.org/documentation/reference/routing/custom-controllers).
+
+We've only ever used it in combination with [Umbraco Mapper](https://github.com/AndyButland/UmbracoMapper "Umbraco Mapper project"), and an IoC container such as Ninject or Autofac (the example website uses Autofac). These are not necessary, but recommended.
 
 ## Examples
 

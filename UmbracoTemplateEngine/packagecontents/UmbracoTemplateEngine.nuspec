@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>UmbracoTemplateEngine</id>
-    <version>1.0</version>
+    <version>1.0.2</version>
     <title>Umbraco Template Engine</title>
     <authors>Neil Cumpstey</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

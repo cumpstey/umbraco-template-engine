@@ -3,7 +3,7 @@
   <system.web.webPages.razor>
     <pages>
       <namespaces>
-        <add namespace="Zone.UmbracoTemplateEngine" xdt:Transform="Remove" xdt:Locator="match(namespace)" />
+        <add namespace="Zone.UmbracoTemplateEngine" xdt:Transform="Remove" xdt:Locator="Match(namespace)" />
         <add namespace="Zone.UmbracoTemplateEngine" xdt:Transform="Insert" />
       </namespaces>
     </pages>
