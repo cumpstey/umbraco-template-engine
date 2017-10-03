@@ -15,7 +15,7 @@
                 return null;
             }
 
-            var value = property.Value;
+            var value = property.DataValue;
             return value == null ? new int[0] : value.ToString().ToIntArray();
         }
 

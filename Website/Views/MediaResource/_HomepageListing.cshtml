@@ -1,0 +1,6 @@
+﻿@model MediaResource
+@{ Layout = "~/Views/Shared/Layouts/_HomepageListing.cshtml"; }
+<div style="text-align: center;">
+    <h3>@Model.ListingTitle</h3>
+    <div><a href="@Model.Url">@Html.DisplayImage(Model.MainImage, 280, 157)</a></div>
+</div>

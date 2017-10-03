@@ -45,7 +45,8 @@
         public static object GetImageWithCrops(IUmbracoMapper mapper, IPublishedContent contentToMapFrom, string propertyName, bool recursive)
         {
             var umbracoHelper = new UmbracoHelper(UmbracoContext.Current);
-            var mediaModel = umbracoHelper.TypedMedia(contentToMapFrom.GetPropertyValue<int>(propertyName));
+            //var mediaModel = umbracoHelper.TypedMedia(contentToMapFrom.GetPropertyValue<int>(propertyName));
+            var mediaModel = contentToMapFrom.GetPropertyValue<IPublishedContent>(propertyName);
             if (mediaModel == null)
             {
                 return null;
